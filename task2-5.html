@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Title</title>
-        <meta charset="UTF-8">
-        
-    </head>
-    <body>
-    <h1 title="'tooltip'">
-        A level 1 heading with a tooltip
-        that says 'tooltip'(with the quotes)
-    </h1>
-    <hr />
-    <h3>
-        This level 3 heading has a link to<a href="https://www.w3schools.com"> https://www.w3schools.com</a>
-    </h3>
-    <p>
-        This is just a regular paragraph.
-    </p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="prac2.css">
+</head>
+<body>
+    <div class="content">
+        <h1>A page with some divs and spans</h1>
+        <p>
+            This page looks mych cleaner now that I've put my content
+            in a div with a white background.
+        </p>
+        <p>
+            Becasue this div is special, it has it's own id, "content". This allows us to differentiate it from
+            other divs and give it a white background.
+        </p>
+        <hr />
+        <p>
+            This is a normal paragraph, except <span class="blue">this span of text is blue</span>
+            <span class="fancy">and this span has a font-family of cursive,</span> because they belongs
+            to two classes called "blue" and "fancy" respectively.
+        </p>
+        <p>
+            On the other hand, <span class="blue fancy">this 
+                span of text is both blue and fancy!
+            </span>
+        </p>
+    </div>
+    <div>
+        <p>
+            This text is inside a normal div, but the 
+            background has not been set.
+        </p>
+    </div>
+    
 </body>
 </html>

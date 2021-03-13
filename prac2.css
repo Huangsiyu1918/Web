@@ -1,0 +1,67 @@
+h1
+{
+    font-family: sans-serif;
+}
+p
+{
+    font-family: serif;
+}
+
+p em
+{
+    color: gray;
+    text-decoration: line-through;
+}
+.link
+{
+    color: darkgreen;
+}
+
+mark
+{
+    color: darkblue;
+    background-color: pink;
+}
+
+h2
+{
+    font-family: sans-serif;
+    text-align: left;
+}
+.preformatted
+{
+    font-family: monospace;
+    font-size: 1em;
+}
+
+h3
+{
+    color: rgba(0, 0, 139, 0.8);
+}
+
+
+.transparent-text
+{
+ color: rgba(0, 0, 0, 0.5);   
+}
+
+body
+{   background-image: url(cross.png);
+    background-color:#DCF5F5;
+
+}
+
+.content 
+{
+    background-color: white;
+}
+
+.blue
+{
+    color: blue;
+}
+
+.fancy
+{
+    font-family: cursive;
+}
