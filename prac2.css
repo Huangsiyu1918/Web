@@ -183,3 +183,41 @@ i
 {
     color: #BFCFD4;
 }
+
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkgray;
+  }
+
+  li.navbar {
+    float: left;
+  }
+
+  li.navbar a
+  {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    font-family: "Raleway", sans-serif;
+    text-decoration: none;
+  }
+  li.navbar:hover
+  {
+      background-color: darkgray;
+      text-shadow:0px 0px lightgray;
+  }
+
+
+  ul.square
+  {
+      list-style-type: square;
+  }
+  ol.roman
+  {
+      list-style-type: lower-roman;
+  }
+
