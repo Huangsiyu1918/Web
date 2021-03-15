@@ -65,6 +65,53 @@ body
 {
     font-family: cursive;
 }
+.content2
+{
+    background-color: white;
+    border:1px solid darkgray;
+    border-radius: 8px;
+}
+
+.red-border
+{
+    border-style: solid;
+    border-color: red;
+}
+
+hr
+{
+    
+    border-color: #CFDFE4;
+}
+
+.red-outline
+{
+    outline-style: solid;
+    outline-color: red;
+}
+
+.blue-border
+{
+    border-style: solid;
+    border-color: blue;
+}
+.red-border2
+{
+    border-top: solid red;
+    border-left: solid red;
+    border-right: solid red;
+    border-bottom-color: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.blue-border2
+{
+    border-style: solid;
+    border-color: blue;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
 #outer
 {
     border: solid red;
