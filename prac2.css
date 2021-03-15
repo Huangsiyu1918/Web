@@ -100,7 +100,6 @@ hr
     border-top: solid red;
     border-left: solid red;
     border-right: solid red;
-    border-bottom-color: none;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
@@ -120,11 +119,13 @@ hr
 
 #inner
 {
+    text-align: right;
     margin:10px 20px 10px 20px;
     padding: 12px;
-    border: 200px 700px;
+    border-width: 200px 700px;
     border: solid red;
     background-color: yellow;
+    box-sizing: border-box;
 }
 #outer2
 {
@@ -135,8 +136,50 @@ hr
 
 #inner2
 {
-    text-align: center;
+    text-align: right;
+    border: solid red;
     padding: 12px;
-    border: 400px;
+    width: 400px;
+    height: 400px;
     background-color: yellow;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+h1
+{
+    font-family: "Raleway", sans-serif;
+}
+
+h2
+{
+    font-family: "Raleway",serif;
+}
+
+
+blockquote
+{
+    font-family: "Raleway";
+    color: dimgrey;
+    line-height: 1.5;
+    word-spacing: 0.2em;
+    text-align: justify;
+}
+
+h4.font
+{
+    font-family: "Raleway";
+    font-style: italic;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.icon
+{
+    text-align: center;  
+}
+
+i
+{
+    color: #BFCFD4;
 }
