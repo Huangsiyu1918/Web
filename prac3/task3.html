@@ -12,14 +12,12 @@
     <body>
         
         <div id="main" class="container">
-            <button class="right">MENU</button>
+            <button class="right" onclick="Menu()">MENU</button>
             <h1>Part 3 - Javascript Playground</h1>
             <div id="mcount" onmouseover = "mouseCount()"></div>
-            <div id="posts">
-
-            </div>
+            <div id="posts"></div>
             <hr />
-            <textarea rows="4" cols="60" class="post-content">Type your text here...</textarea>
+            <textarea rows="4" cols="60" class="innertext">Type your text here...</textarea>
             <br />
             <div class="controls left">
                 <input type="number" name="quantity" value="1" /><br />
@@ -39,9 +37,9 @@
         </div>
         
         <div id="menu" class="container" style="display:none;">
-            <button class="right">BACK</button>
+            <button class="right" onclick="Menu()">BACK</button>
             <p>&nbsp;</p>
-            <span>Background Color:</span><input type="text">
+            <span>Background Color:</span><input id = "BackColor" type="text" onchange = "changeBackColor()">
         </div>
         <script src="task3.js"></script>
     </body>

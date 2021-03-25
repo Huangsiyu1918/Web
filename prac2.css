@@ -221,3 +221,33 @@ ul.navbar {
       list-style-type: lower-roman;
   }
 
+  table
+  {
+    border-collapse: collapse;
+
+  }
+  
+  th,td
+  {
+    text-align: left;
+    border-bottom: 1px solid darkgray;
+  }
+
+  td
+  {
+      width: 500px;
+
+  }
+  tr:nth-child(even)
+  {background-color: #F8F8F8}
+
+  tr:hover
+  {
+      background-color: darkslategray;
+  }
+
+  #table2
+  {
+      border: solid black;
+      background-color: palegoldenrod;
+  }
