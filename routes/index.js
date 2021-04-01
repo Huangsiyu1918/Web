@@ -46,28 +46,95 @@ router.get('/color.html', function(req, res, next)
 module.exports = router;
 
 // 3-3
+
+let time = ""
 router.get('/log.html', function(req, res, next)
 {
-  // let createTime = document.createElement('p');
-  // createTime.innerHTML= Date.now();
-  // let innerBody = document.getElementById("body");
-  // innerBody.appendChild(createTime);
-  res.send('<!DOCTYPE html> \
-  <html lang="en">\
-  <head>\
-      <meta charset="UTF-8">\
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">\
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-      <title>log_html</title>\
-  </head>\
-  <body id="body">\
-  <script>\
-    let createTime = document.createElement("p");\
-    createTime.innerHTML= String(Date.now());\
-    let innerBody = document.getElementById("body");\
-    innerBody.appendChild(createTime);\
-  </script>\
-    </body>\
-    </html>');
+  // arr.push(Date());
+  // let innerTime = "";
+  // for(let i = 0; i < arr.length; i++){
+  //   innerTime += String("<li>" + arr[i] + "</li>");
+  // }
+
+  time += "<li>" + Date() + "</li>";
+
+  res.send(
+    `<!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Document</title>\
+</head>\
+<body>\
+<ul>${time}</ul>
+</body>\
+</html>`
+  )
 });
 module.exports = router;
+
+//3-4
+var before = true;
+router.get('/first.html', function(req, res, next)
+{
+  if(before){
+    before = false;
+  res.send(
+    `<!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Document</title>\
+</head>\
+<body>\
+    <p><a href="/main.html"> Welcome </a> </p>
+</body>\
+</html>`
+  )}
+  else
+  res.redirect('main.html');
+  
+});
+
+router.get('/main.html', function(req, res, next)
+{
+  if(before)
+  {
+    res.redirect('first.html');
+  }
+  else
+  res.send(
+    `<!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Document</title>\
+</head>\
+<body>\
+   <h1>My main site</h1>
+   <p>fssgsgsghdfg</p>
+</body>\
+</html>`
+  )
+});
+
+//4-2
+
+let count2 = 0;
+let arr2 = ["red", "yellow", "green", "blue"]
+router.get('/color.txt', function(req, res, next)
+{
+  if(count2 == 4)
+  {
+    count2 = 0;
+  }
+
+  res.send(`${arr2[(count2 % 4)]}`);
+  count2++;
+});
