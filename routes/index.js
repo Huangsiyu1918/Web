@@ -8,12 +8,16 @@ router.get('/', function(req, res, next) {
 
 module.exports = router;
 
+let visit = "";
 router.get('/last.txt', function(req, res, next)
 {
-  res.send(String(Date.now()));
+  res.setHeader('content-Type', 'text/plain');
+  res.send(visit);
+  visit = new Date().toString();
 });
 
 module.exports = router;
+
 
 let count = 1;
 router.get('/color.html', function(req, res, next)
@@ -130,6 +134,7 @@ let count2 = 0;
 let arr2 = ["red", "yellow", "green", "blue"]
 router.get('/color.txt', function(req, res, next)
 {
+  res.setHeader('content-Type', 'text/plain');
   if(count2 == 4)
   {
     count2 = 0;
@@ -137,4 +142,19 @@ router.get('/color.txt', function(req, res, next)
 
   res.send(`${arr2[(count2 % 4)]}`);
   count2++;
+});
+
+let timeStamps = [];
+router.get('/log.json', function(req, res, next)
+{
+  timeStamps.push(String(Date()));
+  res.send(JSON.stringify(timeStamps));
+
+});
+
+let d = String(Date());
+router.get('/log-ro.json', function(req, res, next)
+{
+  //timeStamps.push(d);
+  res.send((timeStamps));
 });
