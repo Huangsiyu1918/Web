@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My AJAX Site</h1>
+
+    <button>contact</button> <button>search</button> <button>about</button>
+    <div></div>
+    
+
+    <script>
+
+        const btn1 = document.getElementsByTagName('button')[0];
+
+          btn1.onclick = function(){
+          const xhr = new XMLHttpRequest();
+          xhr.open("GET", '/contact.ajax', true);
+          xhr.send();
+          xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            }
+            const emailAdress = this.responseText;
+            document.getElementsByTagName('div')[0].innerHTML = emailAdress;
+          };
+        }
+        const btn2 = document.getElementsByTagName('button')[1];
+
+          btn2.onclick = function(){
+          const xhr = new XMLHttpRequest();
+          xhr.open("GET", '/search.ajax', true);
+          xhr.send();
+          xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            }
+            const search = this.responseText;
+            document.getElementsByTagName('div')[0].innerHTML = search;
+          };
+        }
+
+        const btn3 = document.getElementsByTagName('button')[2];
+        btn3.onclick = function(){
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", '/about.ajax', true);
+        xhr.send();
+        xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        }
+        const about = this.responseText;
+        document.getElementsByTagName('div')[0].innerHTML = about;
+        };
+        }
+    </script>
+    
+</body>
+</html>

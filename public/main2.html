@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="load()">
+    <h1>Heading</h1>
+    <p></p>
+    <button>accept</button>
+
+    <script>
+        function load() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "/content.ajax", true);
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    //console.log("CHECK");
+                    document.getElementsByTagName('p')[0].remove();
+                    document.getElementsByTagName('button')[0].remove();
+                    document.getElementsByTagName('body')[0].innerHTML += this.responseText;
+                }
+                else {
+                    document.getElementsByTagName('p')[0].innerHTML = 'press the button to\
+                to accept the terms and conditions';
+
+                    const btn1 = document.getElementsByTagName('button')[0];
+                    btn1.onclick = function () {    
+                        const xhr = new XMLHttpRequest();
+                        xhr.open("GET", '/accept', true);
+                        xhr.send();
+                        xhr.onreadystatechange = function () {
+                            if (this.readyState == 4 && this.status == 200) {
+                                load();
+                            }
+                            // else
+                            // {
+                            //     document.getElementsByTagName('body')[0].innerHTML = eqweqw;
+                            // }
+                        };
+                    }
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>

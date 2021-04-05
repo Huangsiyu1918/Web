@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="record()">
+
+    <ul></ul>
+    <script>
+        setInterval(timeDisplay, 1000);
+
+        function timeDisplay() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", '/log-ro.json', true);
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    let innerTxt = document.getElementsByTagName('ul')[0];
+                    let arr = JSON.parse(this.responseText);
+
+                    innerTxt.innerHTML = "";
+
+                    for(let i = 0; i < arr.length; i++)
+                    {
+                        innerTxt.innerHTML += "<li>" + arr[i] + "</li>";                        
+                    }
+                }
+                    // let newUl = document.createElement('UL');
+                    // for(let i = 0; i < arr.length; i++)
+                    // {
+                    //     let temp = document.createElement('LI');
+                    //     temp.innerHTML = arr[i];
+                    //     newUl.appendChild(temp);
+                    // }
+                    // value.parentNode.replaceChild(newUl, value);
+                    // }
+                }
+            };
+        function record() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", '/log.json', true);
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>
