@@ -71,7 +71,7 @@ router.get('/log.html', function(req, res, next)
 <ul>${time}</ul>
 </body>
 </html>`
-  )
+  );
 });
 
 // //3-4
