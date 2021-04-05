@@ -93,7 +93,8 @@ router.get('/first.html', function(req, res, next)
     <p><a href="/main.html"> Welcome </a> </p>
 </body>\
 </html>`
-  )}
+  );
+}
   else
   res.redirect('main.html');
   
@@ -126,7 +127,7 @@ router.get('/main.html', function(req, res, next)
 //4-2
 
 let count2 = 0;
-let arr2 = ["red", "yellow", "green", "blue"]
+let arr2 = ["red", "yellow", "green", "blue"];
 router.get('/color.txt', function(req, res, next)
 {
   res.setHeader('content-Type', 'text/plain');
@@ -135,7 +136,7 @@ router.get('/color.txt', function(req, res, next)
     count2 = 0;
   }
 
-  res.send(`${arr2[(count2 % 4)]}`);
+  res.send(arr2[count2 % 4]);
   count2++;
 });
 
@@ -151,7 +152,7 @@ let d = String(Date());
 router.get('/log-ro.json', function(req, res, next)
 {
   //timeStamps.push(d);
-  res.send((timeStamps));
+  res.send(timeStamps);
 });
 
 router.get('/contact.ajax', function(req, res, next)
