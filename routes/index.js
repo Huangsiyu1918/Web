@@ -162,7 +162,7 @@ router.get('/contact.ajax', function(req, res, next)
 
 router.get('/search.ajax', function(req, res, next)
 {
-  res.send('<input type="text"> <input type="button" value="Search">');
+  res.send('<input type="text"> <button>Search</button>');
 });
 
 let staus = false;
