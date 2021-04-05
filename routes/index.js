@@ -6,7 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-module.exports = router;
 
 let visit = "";
 router.get('/last.txt', function(req, res, next)
@@ -16,7 +15,6 @@ router.get('/last.txt', function(req, res, next)
   visit = new Date().toString();
 });
 
-module.exports = router;
 
 
 let count = 1;
@@ -47,7 +45,6 @@ router.get('/color.html', function(req, res, next)
   </html>');
 });
 
-module.exports = router;
 
 // 3-3
 
@@ -77,7 +74,6 @@ router.get('/log.html', function(req, res, next)
 </html>`
   )
 });
-module.exports = router;
 
 //3-4
 var before = true;
@@ -158,3 +154,35 @@ router.get('/log-ro.json', function(req, res, next)
   //timeStamps.push(d);
   res.send((timeStamps));
 });
+
+router.get('/contact.ajax', function(req, res, next)
+{
+  res.send('<a href="huangsiyu1918@gmail.com">huangsiyu1918@gmail.com</a>');
+});
+
+router.get('/search.ajax', function(req, res, next)
+{
+  res.send('<input type="text"> <input type="button" value="Search">');
+});
+
+let staus = false;
+router.get('/accept', function(req, res, next)
+{
+  staus = true;
+  res.sendStatus(200);
+});
+
+router.get('/content.ajax', function(req, res, next)
+{
+  if(staus)
+  {
+    console.log("check again");
+    res.send('<p> This is a paragraph </p> <p> This is another paragraph </p>');
+  }
+  else
+  {
+    res.sendStatus(403); // equivalent to res.status(403).send('Forbidden')
+  }
+});
+
+module.exports = router;
