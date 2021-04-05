@@ -47,7 +47,7 @@ router.get('/color.html', function(req, res, next)
 
 // 3-3
 
-let time = ""
+let time = "";
 router.get('/log.html', function(req, res, next)
 {
   // arr.push(Date());
