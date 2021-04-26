@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.24, for macos11 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.23, for Linux (x86_64)
 --
--- Host: localhost    Database: enrolment
+-- Host: 127.0.0.1    Database: enrolment
 -- ------------------------------------------------------
--- Server version	8.0.24
+-- Server version	8.0.19-0ubuntu5
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,6 +16,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Current Database: `enrolment`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `enrolment` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+USE `enrolment`;
+
+--
 -- Table structure for table `Enrolments`
 --
 
@@ -23,10 +31,10 @@ DROP TABLE IF EXISTS `Enrolments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Enrolments` (
-  `student_id` varchar(20) DEFAULT NULL,
-  `subject_code` varchar(20) DEFAULT NULL,
+  `student_id` varchar(50) DEFAULT NULL,
+  `subject_code` varchar(50) DEFAULT NULL,
   `mark` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,11 +55,11 @@ DROP TABLE IF EXISTS `Students`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Students` (
-  `student_id` varchar(20) DEFAULT NULL,
-  `given_name` varchar(20) DEFAULT NULL,
-  `family_name` varchar(20) DEFAULT NULL,
-  `program` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `student_id` varchar(50) DEFAULT NULL,
+  `given_name` varchar(50) DEFAULT NULL,
+  `family_name` varchar(50) DEFAULT NULL,
+  `program` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,10 +80,10 @@ DROP TABLE IF EXISTS `Subjects`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Subjects` (
-  `subject_code` varchar(30) DEFAULT NULL,
-  `subject` varchar(40) DEFAULT NULL,
-  `faculty` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `subject_code` varchar(50) DEFAULT NULL,
+  `subject` varchar(50) DEFAULT NULL,
+  `faculty` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,4 +105,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-25 21:14:31
+-- Dump completed on 2021-04-14 13:13:29
