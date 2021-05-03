@@ -58,7 +58,7 @@ var vueinst = new Vue({
     },
     method:{
         addComment: function(){
-            this.c_arr.push(c_text);
+            this.c_arr.push(this.c_text);
         }
     }
 }); 
