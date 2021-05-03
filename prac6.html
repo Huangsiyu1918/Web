@@ -36,7 +36,7 @@
                 </nav>
             </header>
             
-            <div class="pad" id="ad" v-show="show_ad">
+            <div class="pad" id="ad" v-if="show_ad">
                 <button class="pure-button" style="float:right;" onclick="vueinst.show_ad = false;">close</button>
                 <img v-bind:src="special.url" alt="" onclick="vueinst.special=SPECIALS[Math.floor((Math.random() * 3))];" />
                 <h3>{{special.name}}</h3>
@@ -45,7 +45,7 @@
 
             
             
-            <main class="pure-g">
+            <main class="pure-g" v-else>
             
                 <div class="pad pure-u-2-3">
                     <div id="items">
@@ -71,7 +71,7 @@
                     
                     <h3>Dark Mode:</h3>
                     <div class="pure-button-group" role="group" aria-label="Nightmode">
-                        <button class="pure-button pure-button-active" v-bind:class="[dark_mode ? 'pure-button' : pure-button-active]" onclick="vueinst.dark_mode = false;">OFF</button>
+                        <button class="pure-button pure-button-active" v-bind:class="[dark_mode ? 'pure-button-active' : '']" onclick="vueinst.dark_mode = false;">OFF</button>
                         <button class="pure-button" v-bind:class="[dark_mode ? 'pure-button-active' : '', dark_mode ? 'pure-button-primary' : '']" onclick="vueinst.dark_mode = true;">ON</button>
                     </div>
                     
