@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.post('/users/', function(req, res, next) {
+router.use( function(req, res, next) {
   console.log('POST from a user');
 });
 
