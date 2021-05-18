@@ -52,4 +52,8 @@ router.post('/combine', function(req, res, next) {
   res.send(str);
 });
 
+router.post('/users/', function(req, res, next) {
+  console.log('POST from a user');
+});
+
 module.exports = router;
