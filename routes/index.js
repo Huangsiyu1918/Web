@@ -45,10 +45,12 @@ router.post('/combine', function(req, res, next) {
 
   var str = '';
 
-  for(x in data)
+  for(let x of data.lines)
   {
+    console.log(x);
     str += x + data.suffix + '\n';
   }
+  // console.log(str);
   res.send(str);
 });
 
