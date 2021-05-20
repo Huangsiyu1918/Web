@@ -55,4 +55,12 @@ router.post('/combine', function(req, res, next) {
 });
 
 
+var j = 0;
+router.get('/cookie', function(req, res, next) {
+  j++;
+  res.cookie('task3_1',j);
+  res.send();
+});
+
+
 module.exports = router;
