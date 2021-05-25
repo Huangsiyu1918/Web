@@ -1,1 +1,2 @@
-SELECT* From film;
+SELECT COUNT(film_id)
+FROM film;
