@@ -1,3 +1,3 @@
 SELECT first_name, last_name, rental_date  FROM customer, rental
-ORDER BY rental_date ASC, return_date ASC
-LIMIT 1;
+ORDER BY return_date DESC , rental_date ASC
+LIMIT 10;
