@@ -18,6 +18,7 @@ router.get('/actors', function(req, res, next) {
     var query = "select first_name, last_name From actor;";
     connection.query(query, function(err, rows, fields)
     {
+      //test
       connection.release();
       if(err)
       {
