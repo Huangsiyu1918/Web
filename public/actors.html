@@ -72,8 +72,10 @@
               text +=           "<tr>" +
                                     "<td>" + res[i].first_name + "</td>" +
                                     "<td>" + res[i].last_name + "</td>" +
-                                 "</tr>"
+                                 "</tr>";
+                          
             }
+            console.log(res.length);
             TB.innerHTML = text;
           }
         };
@@ -88,7 +90,6 @@
     xhttp.open("POST", "/actors", true);
                 xhttp.setRequestHeader("Content-type", "application/json");
                 xhttp.send(JSON.stringify({ first: first_name, last: last_name }));
-                showActors();
   }
 </script>
 
